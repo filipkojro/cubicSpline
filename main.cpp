@@ -2,7 +2,6 @@
 #include <iostream>
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include <string.h>
 
 const int W = 888;
 const int H = 888;
@@ -22,7 +21,6 @@ struct Spline {
 std::vector<Spline> cubicSpline(const std::vector<double>& x, const std::vector<double>& y) {
     int n = x.size() - 1;
     std::vector<double> a(n + 1), b(n), d(n), h(n), alpha(n), c(n + 1), l(n + 1), mu(n + 1), z(n + 1);
-
 
     for (int i = 0; i <= n; ++i) a[i] = y[i];
 
@@ -115,7 +113,6 @@ int main() {
     }
 
     texture.update(pixels);
-
 
     sf::Font font;
     if (!font.loadFromFile("../comic.ttf")) {
